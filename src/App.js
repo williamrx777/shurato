@@ -37,7 +37,7 @@ class App extends Component {
   };
 
   handlePreviousEpisode = () => {
-    if (this.state.codigo > 77) {
+    if (this.state.codigo > 40) {
       this.setState((prevState) => ({
         codigo: prevState.codigo - 1,
       }), this.fetchData);
@@ -89,7 +89,7 @@ class App extends Component {
 </div>
 
 
-        {this.state.codigo < 80 && (
+        {this.state.codigo < 77 && (
         <button
           className="btn btn-primary"
           onClick={this.handleNextEpisode}
