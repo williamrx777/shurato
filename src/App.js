@@ -5,7 +5,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      codigo: 1,
+      codigo: 40,
       url: ''
       
     };
@@ -16,7 +16,7 @@ class App extends Component {
   }
 
   fetchData = () => {
-    fetch(`https://wilflix.onrender.com/shurato/${this.state.codigo}`)
+    fetch(`https://filmes-e-animes.williamrx777.repl.co/animes/animes-detalhe/${this.state.codigo}/`)
       .then((response) => response.json())
       .then((data) => {
         this.setState({
@@ -37,7 +37,7 @@ class App extends Component {
   };
 
   handlePreviousEpisode = () => {
-    if (this.state.codigo > 1) {
+    if (this.state.codigo > 77) {
       this.setState((prevState) => ({
         codigo: prevState.codigo - 1,
       }), this.fetchData);
@@ -69,7 +69,7 @@ class App extends Component {
           <input className="btn btn-outline-primary" type="submit" value="submit" />
         </form>
 
-        {this.state.codigo > 1 && (
+        {this.state.codigo > 40 && (
         <button
           className="btn btn-success"
           onClick={this.handlePreviousEpisode}
@@ -89,7 +89,7 @@ class App extends Component {
 </div>
 
 
-        {this.state.codigo < 38 && (
+        {this.state.codigo < 80 && (
         <button
           className="btn btn-primary"
           onClick={this.handleNextEpisode}
